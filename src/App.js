@@ -15,6 +15,7 @@ import { useContext } from 'react';
 import MessageContext from './context/Messages/MessageContext';
 import Message from './components/messages/Message';
 import Modal from './components/messages/Modal';
+import Profile from './Pages/Profile';
 
 function App() {
   const MessageCtx = useContext(MessageContext);
@@ -30,6 +31,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/availability' element={<Availability />} />
           <Route path='/auth/:type' element={<Auth />} />
+          <Route path='/profile' element={<Profile />} />
         </Routes>
       </main>
       <Footer />

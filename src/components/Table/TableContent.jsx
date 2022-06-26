@@ -38,6 +38,7 @@ function TableContent(props) {
                     if (Auth.User) {
                       return (
                         <th
+                          className='bg-indigo-700 text-white border'
                           key={index}
                           {...column.getHeaderProps(
                             column.getSortByToggleProps({
@@ -63,6 +64,7 @@ function TableContent(props) {
                       ) {
                         return (
                           <th
+                            className='bg-indigo-700 text-white border'
                             key={index}
                             {...column.getHeaderProps(
                               column.getSortByToggleProps({
@@ -129,6 +131,7 @@ function TableContent(props) {
                     {Auth.User && (
                       <td>
                         <button
+                          className='bg-gray-200 p-1 hover:bg-gray-300 w-32 rounded'
                           variant='outline-success'
                           onClick={() => {
                             SendMail({

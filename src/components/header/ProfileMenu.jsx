@@ -44,7 +44,7 @@ function ProfileMenu() {
             <Menu.Item>
               {({ active }) => (
                 <Link
-                  to='/'
+                  to='/profile'
                   className={classNames(
                     active ? 'bg-indigo-100' : '',
                     'block px-4 py-2 text-sm text-gray-700'
@@ -69,8 +69,7 @@ function ProfileMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link
-                  to='/'
+                <div
                   className={classNames(
                     active ? 'bg-indigo-100' : '',
                     'block px-4 py-2 text-sm text-gray-700'
@@ -85,7 +84,7 @@ function ProfileMenu() {
                   }}
                 >
                   Sign out
-                </Link>
+                </div>
               )}
             </Menu.Item>
           </Menu.Items>
