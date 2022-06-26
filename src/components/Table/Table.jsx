@@ -40,7 +40,6 @@ const dummyColumn = [
 ];
 const Donors = (props) => {
   const data = props.data;
-  console.log(data)
   const Auth = useContext(UserContext);
   // eslint-disable-next-line
   const Message = useContext(MessageContext);
@@ -57,6 +56,7 @@ const Donors = (props) => {
     pageOptions,
     prepareRow,
     state,
+  // eslint-disable-next-line
     setGlobalFilter,
   } = useTable(
     {
@@ -69,6 +69,7 @@ const Donors = (props) => {
     useSortBy,
     usePagination
   );
+  // eslint-disable-next-line
   const { globalFilter, pageIndex } = state;
 
   return (
