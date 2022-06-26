@@ -93,7 +93,7 @@ export default function Form(props) {
           username: username.current.value,
           email: email.current.value,
           password: password.current.value,
-          bloodGroup: bloodGroup.name,
+          bloodGroup: bloodGroup.alt,
           course: Course.name,
           branch: Branch.name,
           admissionNumber: 'N.A',

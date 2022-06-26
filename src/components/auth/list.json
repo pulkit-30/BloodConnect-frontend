@@ -6,31 +6,43 @@
     },
     {
       "id": 1,
-      "name": "A-"
+      "name": "A+",
+      "alt": "A-positive"
     },
     {
       "id": 2,
-      "name": "B+"
+      "name": "A-",
+      "alt": "A-negative"
     },
     {
       "id": 3,
-      "name": "B-"
+      "name": "B+",
+      "alt": "B-positive"
     },
     {
       "id": 4,
-      "name": "AB+"
+      "name": "B-",
+      "alt": "B-negative"
     },
     {
       "id": 5,
-      "name": "AB-"
+      "name": "AB+",
+      "alt": "AB-positive"
     },
     {
       "id": 6,
-      "name": "O+"
+      "name": "AB-",
+      "alt": "AB-negative"
     },
     {
       "id": 7,
-      "name": "O-"
+      "name": "O+",
+      "alt": "O-positive"
+    },
+    {
+      "id": 8,
+      "name": "O-",
+      "alt": "O-negative"
     }
   ],
   "course": [
