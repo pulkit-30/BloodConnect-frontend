@@ -7,7 +7,6 @@ import {
 } from 'react-table';
 import UserContext from '../../context/user/UserContext';
 import MessageContext from '../../context/Messages/MessageContext';
-import Pagination from './Pagination';
 import TableContent from './TableContent';
 
 const dummyColumn = [
@@ -41,6 +40,7 @@ const dummyColumn = [
 ];
 const Donors = (props) => {
   const data = props.data;
+  console.log(data)
   const Auth = useContext(UserContext);
   // eslint-disable-next-line
   const Message = useContext(MessageContext);
@@ -57,7 +57,6 @@ const Donors = (props) => {
     pageOptions,
     prepareRow,
     state,
-    // eslint-disable-next-line
     setGlobalFilter,
   } = useTable(
     {
@@ -70,7 +69,6 @@ const Donors = (props) => {
     useSortBy,
     usePagination
   );
-  // eslint-disable-next-line
   const { globalFilter, pageIndex } = state;
 
   return (
@@ -116,21 +114,14 @@ const Donors = (props) => {
               Seek Help From All
             </button>
           )}
+          
           <TableContent
             getTableProps={getTableProps}
             getTableBodyProps={getTableBodyProps}
             prepareRow={prepareRow}
             dummyColumn={dummyColumn}
             data={data}
-          />
-          <Pagination
-            pageIndex={pageIndex}
-            canPreviousPage={canPreviousPage}
-            previousPage={previousPage}
-            pageOptions={pageOptions}
-            canNextPage={canNextPage}
-            nextPage={nextPage}
-          />
+          />        
         </React.Fragment>
       )}
     </div>

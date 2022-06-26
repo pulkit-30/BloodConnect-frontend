@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import MessageContext from '../../context/Messages/MessageContext';
 import UserContext from '../../context/user/UserContext';
 import { SendMail } from '../../utils/sendMessage';
+import Pagination from './Pagination';
+
 import {
   useTable,
   useSortBy,
@@ -12,7 +14,21 @@ import {
 function TableContent(props) {
   const Auth = useContext(UserContext);
   const Message = useContext(MessageContext);
-  const { headerGroups, page } = useTable(
+  const { 
+    headerGroups, 
+    page,
+    getTableProps,
+    getTableBodyProps,
+    nextPage,
+    previousPage,
+    canPreviousPage,
+    canNextPage,
+    pageOptions,
+    prepareRow,
+    state,
+    setGlobalFilter,
+  
+  } = useTable(
     {
       columns: props.dummyColumn,
       data: props.data,
@@ -24,8 +40,12 @@ function TableContent(props) {
     usePagination
   );
   // eslint-disable-next-line
+  const {pageIndex } = state;
+
   return (
-    <table {...props.getTableProps()}>
+    <div>
+      <div style={{minHeight:'35vh'}}>
+      <table {...props.getTableProps()}>
       <thead>
         {
           // eslint-disable-next-line
@@ -161,6 +181,16 @@ function TableContent(props) {
         }
       </tbody>
     </table>
+    </div>
+    <Pagination
+            pageIndex={pageIndex}
+            canPreviousPage={canPreviousPage}
+            previousPage={previousPage}
+            pageOptions={pageOptions}
+            canNextPage={canNextPage}
+            nextPage={nextPage}
+          />
+    </div>
   );
 }
 
