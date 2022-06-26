@@ -1,15 +1,16 @@
 import { Disclosure } from '@headlessui/react';
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import UserContext from '../../context/user/UserContext';
 import AuthMenu from './AuthMenu';
 
 function NavMenu() {
   const Auth = useContext(UserContext);
   const navigation = [
-    { name: 'Blood Availability', href: '#', current: true },
-    { name: 'Covid Help', href: '#', current: false },
-    { name: 'Learn More', href: '#', current: false },
-    { name: 'About', href: '#', current: false },
+    { name: 'Blood Availability', href: '/availability', current: true },
+    { name: 'Covid Help', href: '/covid', current: false },
+    { name: 'Learn More', href: '/learn', current: false },
+    { name: 'About', href: '/about', current: false },
   ];
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
@@ -19,10 +20,9 @@ function NavMenu() {
       <Disclosure.Panel className='sm:hidden'>
         <div className='px-2 pt-2 pb-3 space-y-1'>
           {navigation.map((item) => (
-            <Disclosure.Button
+            <Link
               key={item.name}
-              as='a'
-              href={item.href}
+              to={item.href}
               className={classNames(
                 item.current
                   ? 'bg-indigo-900 text-white'
@@ -32,7 +32,7 @@ function NavMenu() {
               aria-current={item.current ? 'page' : undefined}
             >
               {item.name}
-            </Disclosure.Button>
+            </Link>
           ))}
           {!Auth.User && (
             <AuthMenu

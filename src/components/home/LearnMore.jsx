@@ -6,15 +6,25 @@ function LearnMore() {
       <h1 className='m-10 flex justify-center align-center text-3xl font-extrabold tracking-tight text-indigo-700 sm:text-4xl'>
         Learn About Donation
       </h1>
-      <div className='flex justify-evenly align-center'>
-        <div className='w-1/2 flex flex-col justify-center align-center'>
+      <div
+        className='section-wrap flex'
+        style={{
+          width: '100%',
+        }}
+      >
+        <div
+          className='subsection flex justify-center align-center flex-col m-auto'
+          style={{
+            width: '40%',
+          }}
+        >
           <iframe
             className='rounded-md'
             src='https://www.youtube.com/embed/B6dAPXpUjCE'
             title='YouTube video player'
             frameBorder='2'
             height={'400px'}
-            width={'700px'}
+            width={'100%'}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
           ></iframe>
@@ -24,7 +34,12 @@ function LearnMore() {
             in maintaining good health.
           </p>
         </div>
-        <div className='w-1/3'>
+        <div
+          className='subsection m-auto h-full'
+          style={{
+            width: '45%',
+          }}
+        >
           <table className=''>
             <tbody>
               <tr>

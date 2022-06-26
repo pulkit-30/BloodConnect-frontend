@@ -36,6 +36,7 @@ function Map(props) {
           map.addLayer(mk);
         }
       });
+      setLoading(false);
     }
     return navigator.geolocation.getCurrentPosition(showPosition);
   }, [props.data]);

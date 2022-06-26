@@ -8,7 +8,10 @@ import UserContext from '../../context/user/UserContext';
 import MessageContext from '../../context/Messages/MessageContext';
 import Loader from '../loader/Loader';
 import list from './list.json';
+import ModalContext from '../../context/Modal/ModalContext';
+
 export default function Form(props) {
+  const Modal = useContext(ModalContext);
   const Auth = useContext(UserContext);
   const Message = useContext(MessageContext);
   const navigate = useNavigate();
@@ -30,7 +33,15 @@ export default function Form(props) {
   const [Branch, setBranch] = useState(list.branch[0]);
   const [permanentLocation, setLocation] = useState(null);
 
-  const getGeoLocation = () => {
+  const getGeoLocation = (permissions) => {
+    if (permissions.state === 'denied') {
+      Modal.setOpen(
+        'Permission',
+        'Please enable your location permission to get Registered with us!!',
+        'Enabled',
+        checkLocationAccess
+      );
+    }
     setLoading(true);
     navigator.geolocation.getCurrentPosition((location) => {
       const userLocation = {
@@ -47,8 +58,13 @@ export default function Form(props) {
     });
   };
 
+  const checkLocationAccess = () => {
+    navigator.permissions.query({ name: 'geolocation' }).then(getGeoLocation);
+  };
   useEffect(() => {
-    props.isRegister && getGeoLocation();
+    if (props.isRegister) {
+      checkLocationAccess();
+    }
     // eslint-disable-next-line
   }, []);
 

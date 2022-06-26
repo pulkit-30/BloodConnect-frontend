@@ -11,3 +11,20 @@ td {
 tr:nth-child(even) {
   background-color: rgba(206, 208, 255, 0.091);
 }
+
+td {
+  height: 40px;
+}
+th {
+  height: 50px;
+}
+
+@media screen and (max-width: 1023px) {
+  .section-wrap {
+    flex-direction: column;
+  }
+  .section-wrap .subsection {
+    width: 90% !important;
+    /* margin: 30px auto; */
+  }
+}
