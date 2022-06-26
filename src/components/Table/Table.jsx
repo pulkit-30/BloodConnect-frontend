@@ -49,14 +49,9 @@ const Donors = (props) => {
   const {
     getTableProps,
     getTableBodyProps,
-    nextPage,
-    previousPage,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
     prepareRow,
     state,
-  // eslint-disable-next-line
+    // eslint-disable-next-line
     setGlobalFilter,
   } = useTable(
     {
@@ -115,14 +110,14 @@ const Donors = (props) => {
               Seek Help From All
             </button>
           )}
-          
+
           <TableContent
             getTableProps={getTableProps}
             getTableBodyProps={getTableBodyProps}
             prepareRow={prepareRow}
             dummyColumn={dummyColumn}
             data={data}
-          />        
+          />
         </React.Fragment>
       )}
     </div>
