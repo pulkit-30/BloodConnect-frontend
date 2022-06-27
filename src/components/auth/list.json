@@ -1,0 +1,116 @@
+{
+  "bg": [
+    {
+      "id": 0,
+      "name": "Blood Group"
+    },
+    {
+      "id": 1,
+      "name": "A+",
+      "alt": "A-positive"
+    },
+    {
+      "id": 2,
+      "name": "A-",
+      "alt": "A-negative"
+    },
+    {
+      "id": 3,
+      "name": "B+",
+      "alt": "B-positive"
+    },
+    {
+      "id": 4,
+      "name": "B-",
+      "alt": "B-negative"
+    },
+    {
+      "id": 5,
+      "name": "AB+",
+      "alt": "AB-positive"
+    },
+    {
+      "id": 6,
+      "name": "AB-",
+      "alt": "AB-negative"
+    },
+    {
+      "id": 7,
+      "name": "O+",
+      "alt": "O-positive"
+    },
+    {
+      "id": 8,
+      "name": "O-",
+      "alt": "O-negative"
+    }
+  ],
+  "course": [
+    {
+      "id": 0,
+      "name": "Course"
+    },
+    {
+      "id": 1,
+      "name": "B.tech"
+    },
+    {
+      "id": 2,
+      "name": "BSC"
+    },
+    {
+      "id": 3,
+      "name": "M.tech"
+    },
+    {
+      "id": 4,
+      "name": "MSC"
+    },
+    {
+      "id": 5,
+      "name": "MBA"
+    },
+    {
+      "id": 6,
+      "name": "BA"
+    },
+    {
+      "id": 7,
+      "name": "Other"
+    }
+  ],
+  "branch": [
+    {
+      "id": 0,
+      "name": "Branch"
+    },
+    {
+      "id": 1,
+      "name": "CSE"
+    },
+    {
+      "id": 2,
+      "name": "CS"
+    },
+    {
+      "id": 3,
+      "name": "IT"
+    },
+    {
+      "id": 4,
+      "name": "ME"
+    },
+    {
+      "id": 5,
+      "name": "ECE"
+    },
+    {
+      "id": 6,
+      "name": "Civil"
+    },
+    {
+      "id": 7,
+      "name": "other"
+    }
+  ]
+}
