@@ -3,6 +3,7 @@ import MessageContext from '../../context/Messages/MessageContext';
 import UserContext from '../../context/user/UserContext';
 import { SendMail } from '../../utils/sendMessage';
 import Pagination from './Pagination';
+import SearchDonor from './SearchDonor';
 
 import {
   useTable,
@@ -40,10 +41,11 @@ function TableContent(props) {
     usePagination
   );
   // eslint-disable-next-line
-  const {pageIndex } = state;
+  const {pageIndex, globalFilter} = state;
 
   return (
     <div>
+      <div style={{textAlign:'center', padding:'10px'}}><SearchDonor filter={globalFilter} setFilter={setGlobalFilter}/></div>
       <div style={{minHeight:'35vh'}}>
       <table {...props.getTableProps()}>
       <thead>
