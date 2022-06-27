@@ -49,11 +49,6 @@ const Donors = (props) => {
   const {
     getTableProps,
     getTableBodyProps,
-    nextPage,
-    previousPage,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
     prepareRow,
     state,
   // eslint-disable-next-line

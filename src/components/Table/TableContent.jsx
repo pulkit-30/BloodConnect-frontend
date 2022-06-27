@@ -18,14 +18,11 @@ function TableContent(props) {
   const { 
     headerGroups, 
     page,
-    getTableProps,
-    getTableBodyProps,
     nextPage,
     previousPage,
     canPreviousPage,
     canNextPage,
     pageOptions,
-    prepareRow,
     state,
     setGlobalFilter,
   
