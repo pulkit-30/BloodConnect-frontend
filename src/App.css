@@ -21,6 +21,16 @@ th {
   height: 50px;
 }
 
+.tableDiv{
+  min-height: 35vh;
+}
+
+.findDonor{
+  width:330px;
+  padding: 5px; 
+  border-width:3px;
+}
+
 @media screen and (max-width: 1023px) {
   .section-wrap {
     flex-direction: column;
@@ -28,5 +38,16 @@ th {
   .section-wrap .subsection {
     width: 90% !important;
     /* margin: 30px auto; */
+  }
+
+  .tableDiv{
+    padding: 0px;
+    margin-top: 20px;
+    overflow: scroll;
+  }
+
+  .findDonor{
+    width:300px; 
+    border-width:2px;
   }
 }

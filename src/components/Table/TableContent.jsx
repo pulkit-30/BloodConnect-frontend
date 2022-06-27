@@ -46,7 +46,7 @@ function TableContent(props) {
   return (
     <div>
       <div style={{textAlign:'center', padding:'10px'}}><SearchDonor filter={globalFilter} setFilter={setGlobalFilter}/></div>
-      <div style={{minHeight:'35vh'}}>
+      <div className='tableDiv'>
       <table {...props.getTableProps()}>
       <thead>
         {
