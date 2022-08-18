@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import UserContext from '../../context/user/UserContext';
 import MessageContext from '../../context/Messages/MessageContext';
 import ModalContext from '../../context/Modal/ModalContext';
+import axios from 'axios';
+import { route } from '../../api';
 
 function ProfileMenu() {
   function classNames(...classes) {
@@ -15,6 +17,12 @@ function ProfileMenu() {
   const LogOut = () => {
     Auth.LogOut();
     Message.ThrowMessage('Signed Out Successfully!!');
+  };
+  const DeleteAcc = () => {
+    axios.delete(route.user_del + Auth.User._id).then(() => {
+      Auth.LogOut();
+      Message.ThrowMessage('Account Deleted Successfully!!');
+    });
   };
   return (
     <React.Fragment>
@@ -56,19 +64,6 @@ function ProfileMenu() {
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <Link
-                  to='/'
-                  className={classNames(
-                    active ? 'bg-indigo-100' : '',
-                    'block px-4 py-2 text-sm text-gray-700'
-                  )}
-                >
-                  Settings
-                </Link>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
                 <div
                   className={classNames(
                     active ? 'bg-indigo-100' : '',
@@ -85,6 +80,35 @@ function ProfileMenu() {
                 >
                   Sign out
                 </div>
+              )}
+            </Menu.Item>
+            <Menu.Item
+              style={{
+                width: '90%',
+                margin: 'auto',
+                borderRadius: '10px',
+                backgroundColor: 'red',
+                color: 'white',
+              }}
+            >
+              {({ active }) => (
+                <Link
+                  to='/'
+                  className={classNames(
+                    active ? 'bg-indigo-100' : '',
+                    'block px-4 py-2 text-sm text-gray-700'
+                  )}
+                  onClick={() => {
+                    Modal.setOpen(
+                      'Delete Account',
+                      'Are you sure you want to delete your account?',
+                      'Delete',
+                      DeleteAcc
+                    );
+                  }}
+                >
+                  Delete Account
+                </Link>
               )}
             </Menu.Item>
           </Menu.Items>

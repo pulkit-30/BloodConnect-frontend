@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React, { useContext } from 'react';
 import { Disclosure } from '@headlessui/react';
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import NavMenu from './NavMenu';
 import ProfileMenu from './ProfileMenu';
 import AuthMenu from './AuthMenu';
@@ -105,14 +105,6 @@ export default function Navbar() {
                 </div>
               </div>
               <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
-                <button
-                  type='button'
-                  className='bg-indigo-900 p-1 rounded-full text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'
-                >
-                  <span className='sr-only'>View notifications</span>
-                  <BellIcon className='h-6 w-6' aria-hidden='true' />
-                </button>
-
                 {!Auth.User && <AuthMenu />}
                 {Auth.User && <ProfileMenu />}
               </div>

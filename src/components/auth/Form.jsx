@@ -118,7 +118,9 @@ export default function Form(props) {
         setLoading(false);
       })
       .catch((err) => {
-        Message.ThrowMessage(err.message);
+        Message.ThrowMessage(
+          'Invalid credentials or Account is not verified!!'
+        );
         setLoading(false);
       });
   };
@@ -141,7 +143,6 @@ export default function Form(props) {
           </div>
           <form className='mt-8 space-y-6' onSubmit={HandelSubmit}>
             <input type='hidden' name='remember' defaultValue='true' />
-
             <InputBox
               isLogin={props.isLogin}
               isRegister={props.isRegister}
