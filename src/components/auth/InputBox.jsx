@@ -91,29 +91,6 @@ function Input(props) {
             selected={props.bloodGroup}
             setSelected={props.setbloodGroup}
           />
-
-          <Dropdown
-            list={list.course}
-            selected={props.Course}
-            setSelected={props.setCourse}
-          />
-          <Dropdown
-            list={list.branch}
-            selected={props.Branch}
-            setSelected={props.setBranch}
-          />
-          <div>
-            <label htmlFor='college' className='sr-only'></label>
-            <input
-              id='college'
-              name='college'
-              type='text'
-              required
-              className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'
-              placeholder='College'
-              ref={props.college}
-            />
-          </div>
         </React.Fragment>
       )}
       <div>

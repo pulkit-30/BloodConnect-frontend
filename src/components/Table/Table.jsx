@@ -20,18 +20,6 @@ const dummyColumn = [
     accessor: 'bloodGroup',
   },
   {
-    Header: 'Course',
-    accessor: 'course',
-  },
-  {
-    Header: 'Branch',
-    accessor: 'branch',
-  },
-  {
-    Header: 'College',
-    accessor: 'college',
-  },
-  {
     Header: 'City',
     accessor: 'city',
   },

@@ -1,7 +1,7 @@
 /**
  * All Backend Api endpoints
  */
-const baseUrl = 'https://pure-wildwood-48840.herokuapp.com/api';
+const baseUrl = 'https://good-newt-sneakers.cyclic.app/api';
 
 export const route = {
   SignUp: baseUrl + '/auth/register',

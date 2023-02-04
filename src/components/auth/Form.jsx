@@ -24,13 +24,9 @@ export default function Form(props) {
   const username = useRef();
   const email = useRef();
   const password = useRef();
-  const college = useRef();
   const state = useRef();
   const city = useRef();
-  // const [selected, setSelected] = useState(props.list[0]);
   const [bloodGroup, setbloodGroup] = useState(list.bg[0]);
-  const [Course, setCourse] = useState(list.course[0]);
-  const [Branch, setBranch] = useState(list.branch[0]);
   const [permanentLocation, setLocation] = useState(null);
   const age = useRef();
   const getGeoLocation = (permissions) => {
@@ -73,9 +69,7 @@ export default function Form(props) {
     event.preventDefault();
     if (
       props.isRegister &&
-      (bloodGroup.name === 'Blood Group' ||
-        Course.name === 'Course' ||
-        Branch.name === 'Branch')
+      (bloodGroup.name === 'Blood Group')
     ) {
       Message.ThrowMessage('Please Enter required Information!!');
       setLoading(false);
@@ -94,11 +88,7 @@ export default function Form(props) {
           email: email.current.value,
           password: password.current.value,
           bloodGroup: bloodGroup.alt,
-          course: Course.name,
-          branch: Branch.name,
-          admissionNumber: 'N.A',
           phoneNumber: 'N.A',
-          college: college.current.value,
           city: city.current.value,
           state: state.current.value,
           permanentLocation: permanentLocation,
@@ -150,15 +140,10 @@ export default function Form(props) {
               username={username}
               email={email}
               password={password}
-              college={college}
               city={city}
               state={state}
               bloodGroup={bloodGroup}
               setbloodGroup={setbloodGroup}
-              Branch={Branch}
-              setCourse={setCourse}
-              Course={Course}
-              setBranch={setBranch}
               age={age}
             />
 
